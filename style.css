@@ -1,4 +1,4 @@
-/* ------- Generalt ----- */
+/* Generalt */
 
 * {
     margin: 0;
@@ -52,6 +52,34 @@ section {
     flex-grow: 3;
     flex-basis: 400px;
 }
+
+/* events */
+
+article {
+    padding: 1em;
+    background-color: white;
+    border: 2px solid lightgrey;
+}
+
+.container article img {
+    width: 100%;
+}
+
+
+.container {
+    margin: 0 auto;
+    display: grid;
+}
+
+@media screen and (min-width:580px) {
+    .container {
+        padding-left: 7%;
+        padding-right: 7%;
+        grid-gap: 2vw;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 
 /* søge funktion*/
 

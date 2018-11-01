@@ -36,42 +36,56 @@
         </div>
     </header>
 
-    <section id="forside">
 
-        <div class="sectionwrapper">
 
-            <div class="column_wide">
-                <div class="column">
 
-                    <p> Her skal være et billede</p>
 
-                </div>
 
-                <div class="column">
 
-                    <p> Her skal stå noget om huset </p>
 
-                </div>
 
-                <div class="column">
 
-                    <p> Her skal være et kort</p>
+    <main>
+        <section class="container" data-container></section>
+        <template data-template>
+            <article class="postListview">
+             <h2 data-title></h2>
+             <div data-text></div>
+                <div data-pris></div>
+                <div data-tid></div>
+                <div data-sted></div>
 
-                </div>
-            </div>
+             </article>
+         </template>
 
-            <div class="sectionwrapper">
 
-                <div class="column_narrow">
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let posts;
+        let postTemplate = document.querySelector("[data-template]");
+        let postContainer = document.querySelector("[data-container]");
+        async function getJSON() {
+            let jsonData = await fetch("http://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events");
+            posts = await jsonData.json();
+            visPosts();
+        }
 
-                    <p> Her skal være kommende events </p>
+        function visPosts() {
+            console.log(posts);
+            posts.forEach(post => {
+                let klon = postTemplate.cloneNode(true).content;
+                klon.querySelector("[data-title]").textContent = post.title.rendered;
+                klon.querySelector("[data-text]").innerHTML = post.content.rendered;
+                klon.querySelector("[data-pris]").innerHTML = post.acf.pris;
+                klon.querySelector("[data-tid]").innerHTML = post.acf.tid;
+                klon.querySelector("[data-sted]").innerHTML = post.acf.sted;
+                postContainer.appendChild(klon);
+            })
+        }
 
-                </div>
+    </script>
 
-            </div>
-        </div>
-
-    </section>
 
     <footer>
 
@@ -98,45 +112,4 @@
         </div>
 
     </footer>
-
-
-
-
-
-
-
-
-    <main>
-        <section class="container" data-container></section>
-        <template data-template>
-            <article class="postListview">
-             <h2 data-title></h2>
-             <p data-text></p>
-             </article>
-         </template>
-
-
-    </main>
-    <script>
-        document.addEventListener("DOMContentLoaded", getJSON);
-        let posts;
-        let postTemplate = document.querySelector("[data-template]");
-        let postContainer = document.querySelector("[data-container]");
-        async function getJSON() {
-            let jsonData = await fetch("http://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events");
-            posts = await jsonData.json();
-            visPosts();
-        }
-
-        function visPosts() {
-            console.log(posts);
-            posts.forEach(post => {
-                let klon = postTemplate.cloneNode(true).content;
-                klon.querySelector("[data-title]").textContent = post.title.rendered;
-                klon.querySelector("[data-text]").innerHTML = post.content.rendered;
-                postContainer.appendChild(klon);
-            })
-        }
-
-    </script>
 </body>
