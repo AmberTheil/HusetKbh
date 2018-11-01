@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Huset KBH</h1>
+        <nav>
+            <a href="#forside">Forside</a>
+            <a href="#om">Om </a>
+            <a href="#events">Events</a>
+            <a href="#locations">Locations</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div style="padding-left:16px">
+</div>
+    </header>
+
+    <section id="forside">
+
+        <div class="sectionwrapper">
+
+            <div class="column_wide">
+                <div class="column">
+
+                    <p> Her skal være et billede</p>
+
+                </div>
+
+                <div class="column">
+
+                    <p> Her skal stå noget om huset </p>
+
+                </div>
+
+                <div class="column">
+
+                    <p> Her skal være et kort</p>
+
+                </div>
+            </div>
+
+            <div class="sectionwrapper">
+
+                <div class="column_narrow">
+
+                    <p> Her skal være kommende events </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+ <footer>
+
+        <div class="sectionwrapper">
+
+            <div class="column">
+
+                <p> vær med: </p>
+
+            </div>
+
+            <div class="column">
+
+                <p> kontakt: </p>
+
+            </div>
+
+            <div class="column">
+
+                <p> åbningstider </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <main>
+        <section class="container" data-container></section>
+        <template data-template>
+            <article class="postListview">
+             <h2 data-title></h2>
+             <p data-text></p>
+             </article>
+         </template>
+
+
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let posts;
+        let postTemplate = document.querySelector("[data-template]");
+        let postContainer = document.querySelector("[data-container]");
+        async function getJSON() {
+            let jsonData = await fetch("http://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/posts");
+            posts = await jsonData.json();
+            visPosts();
+        }
+
+        function visPosts() {
+            console.log(posts);
+            posts.forEach(post => {
+                let klon = postTemplate.cloneNode(true).content;
+                klon.querySelector("[data-title]").textContent = post.title.rendered;
+                klon.querySelector("[data-text]").innerHTML = post.content.rendered;
+                postContainer.appendChild(klon);
+            })
+        }
+
+    </script>
+</body>
