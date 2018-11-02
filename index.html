@@ -14,7 +14,7 @@
         <nav>
             <a href="#forside">Forside</a>
             <a href="#om">Om </a>
-            <a href="#events">Events</a>
+            <a href="#events2">Events</a>
             <a href="#locations">Locations</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
@@ -111,7 +111,11 @@
         <template data-template>
             <article class="postListview">
              <h2 data-title></h2>
-             <p data-text></p>
+             <div data-text></div>
+                <div data-pris></div>
+                <div data-tid></div>
+                <div data-sted></div>
+                <img src="" alt="">
              </article>
          </template>
 
@@ -134,6 +138,10 @@
                 let klon = postTemplate.cloneNode(true).content;
                 klon.querySelector("[data-title]").textContent = post.title.rendered;
                 klon.querySelector("[data-text]").innerHTML = post.content.rendered;
+                klon.querySelector("[data-pris]").innerHTML = post.acf.pris;
+                klon.querySelector("[data-tid]").innerHTML = post.acf.tid;
+                klon.querySelector("[data-sted]").innerHTML = post.acf.sted;
+                klon.querySelector("img").src = post.acf.billede;
                 postContainer.appendChild(klon);
             })
         }

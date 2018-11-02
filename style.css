@@ -53,7 +53,7 @@ section {
     flex-basis: 400px;
 }
 
-/* events */
+/* forside */
 
 article {
     padding: 1em;
@@ -73,12 +73,45 @@ article {
 
 @media screen and (min-width:580px) {
     .container {
+        padding-left: 70%;
+        padding-right: 1%;
+        grid-gap: 2vw;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+
+
+/* events */
+
+#events article {
+    padding: 0.5em;
+    background-color: white;
+    border: 2px solid lightgrey;
+}
+
+#events .container article img {
+    width: 100%;
+}
+
+
+#events .container {
+    margin: 0 auto;
+    display: grid;
+}
+
+@media screen and (min-width:580px) {
+    #events .container {
         padding-left: 7%;
         padding-right: 7%;
         grid-gap: 2vw;
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+
 
 
 /* søge funktion*/

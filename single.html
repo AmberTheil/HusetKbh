@@ -61,6 +61,9 @@
 
         </main>
         <script>
+            let urlParams = new URLSearchParams(window.location.search);
+            let id = urlParams.get("id");
+            console.log("id");
             document.addEventListener("DOMContentLoaded", getJSON);
             let posts;
             let postTemplate = document.querySelector("[data-template]");
@@ -76,7 +79,10 @@
                 posts.forEach(post => {
                     let klon = postTemplate.cloneNode(true).content;
                     klon.querySelector("[data-title]").textContent = post.title.rendered;
-//        klon.querySelector("[data-text]").innerHTML = post.content.rendered; // klon.querySelector("[data-pris]").innerHTML = post.acf.pris; // klon.querySelector("[data-tid]").innerHTML = post.acf.tid; // klon.querySelector("[data-sted]").innerHTML = post.acf.sted;
+                    klon.querySelector("[data-text]").innerHTML = post.content.rendered;
+                    klon.querySelector("[data-pris]").innerHTML = post.acf.pris;
+                    klon.querySelector("[data-tid]").innerHTML = post.acf.tid;
+                    klon.querySelector("[data-sted]").innerHTML = post.acf.sted;
                     klon.querySelector("img").src = post.acf.billede;
                     postContainer.appendChild(klon);
                 })
