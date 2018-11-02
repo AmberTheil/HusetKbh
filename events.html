@@ -36,6 +36,17 @@
         </div>
     </header>
 
+    <!--
+        <h2>DarkCode</h2>
+            <span>Youtube Channel</span>
+            <div class="sm">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+-->
+
 
 
 
@@ -49,12 +60,20 @@
             <section class="container" data-container></section>
             <template data-template>
             <article class="postListview">
+                <div class="card middle">
+                     <div class="front">
+                <img src="" alt="">
+                    </div>
+                 <div class="back">
+                     <div class="back-content middle">
              <h2 data-title></h2>
              <div data-text></div>
                 <div data-pris></div>
                 <div data-tid></div>
                 <div data-sted></div>
-                <img src="" alt="">
+                </div>
+                     </div>
+                    </div>
              </article>
          </template>
 
@@ -76,7 +95,10 @@
                 posts.forEach(post => {
                     let klon = postTemplate.cloneNode(true).content;
                     klon.querySelector("[data-title]").textContent = post.title.rendered;
-//        klon.querySelector("[data-text]").innerHTML = post.content.rendered; // klon.querySelector("[data-pris]").innerHTML = post.acf.pris; // klon.querySelector("[data-tid]").innerHTML = post.acf.tid; // klon.querySelector("[data-sted]").innerHTML = post.acf.sted;
+                    klon.querySelector("[data-text]").innerHTML = post.content.rendered;
+                    klon.querySelector("[data-pris]").innerHTML = post.acf.pris;
+                    klon.querySelector("[data-tid]").innerHTML = post.acf.tid;
+                    klon.querySelector("[data-sted]").innerHTML = post.acf.sted;
                     klon.querySelector("img").src = post.acf.billede;
                     postContainer.appendChild(klon);
                 })
