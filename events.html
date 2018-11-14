@@ -5,132 +5,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Events</title>
 </head>
 
 <body>
-    <header>
-        <h1>Huset KBH</h1>
+    <header class="header">
+
+        <div class="gif">
+            <img src="img/H.gif" alt=”H icon”>
+        </div>
+
+        <div class="socialmedia">
+            <a href="https://www.facebook.com/Huset.Koebenhavn"><img src="img/Facebook.png" alt="Facebook Icon"></a>
+            <a href="https://www.instagram.com/husetkbh/"><img src="img/Instagram.png" alt="Instagram Icon"></a>
+            <a href="https://twitter.com/HusetKBH"><img src="img/twitter.png" alt="Twitter Icon"></a>
+            <a href="https://www.flickr.com/photos/135006755@N04/"><img src="img/flickr.jpg" alt="FLickr Icon"></a>
+
+            <div id="search">
+                <h6>Søg</h6>
+            </div>
+
+
+
+        </div>
+
         <nav>
-            <a href="#forside">Forside</a>
-            <a href="#om">Om </a>
-            <a href="#events2">Events</a>
-            <a href="#locations">Locations</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="index.html">Forside</a>
+            <a href="events.html">Events</a>
+            <div class="dropdown">
+                <button class="lokation-dropdown"><a href="lokationer.html">Venues</a></button>
+                <div class="dropdown-content">
+                    <a href="bastard.html">Bastard Cafe</a>
+                    <a href="husetsbiograf.html">Husets Biograf</a>
+                    <a href="musikcafeen.html">Musikcaféen</a>
+                    <a href="salonk.html">Salon K</a>
+                    <a href="stardust.html">Stardust</a>
+                </div>
+            </div>
+            <a href="kontaktos.html">Kontakt</a>
         </nav>
-
-
-        <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <div class="search-container">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-        </div>
-
-        <div style="padding-left:16px">
-        </div>
     </header>
-
-    <!--
-        <h2>DarkCode</h2>
-            <span>Youtube Channel</span>
-            <div class="sm">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
--->
-
-
-
-
-
-
-
 
 
     <section id="events">
+
+        <div class="billede">
+
+            <img src="img/events.png" alt="event billede">
+
+        </div>
+
+        <div class="filter-lokation">
+            <label for="toggle">Lokation</label>
+            <input type="checkbox" id="toggle" />
+
+            <div class="dropdownbtn">
+                <button class="lokationstype" data-type="Alle">Alle</button>
+                <button class="lokationstype" data-type="Bastard Café">Bastard Café</button>
+                <button class="lokationstype" data-type="Husets biograf">Husets Biograf</button>
+                <button class="lokationstype" data-type="Xenon">Xenon</button>
+            </div>
+        </div>
         <main>
-            <section class="container" data-container></section>
-            <template data-template>
+            <section class="data-container">
+                <template class="data-template">
             <article class="postListview">
+
                 <div class="card middle">
-                     <div class="front">
-                <img src="" alt="">
-                    </div>
-                 <div class="back">
-                     <div class="back-content middle">
-             <h2 data-title></h2>
-             <div data-text></div>
-                <div data-pris></div>
-                <div data-tid></div>
-                <div data-sted></div>
+                    <div class="front">
+                        <div class="slidetop">
+                    <h4 class="pris"> Pris: </h4>
+                    <h3 class="data-pris"> </h3>
+                    <h4 class="kr">,- </h4>
+                    <h3 class="data-tid"></h3>
+                            <h3 class="data-dato"></h3>
                 </div>
-                     </div>
+                        <img class="data-billede" src="" alt="">
+                        <div class="slidebottom">
+                            <h2 class="data-title"></h2>
+                        </div>
                     </div>
-             </article>
-         </template>
+                    <div class="back">
+                        <div class="back-content middle">
+                            <h2 class="data-title"></h2>
+                            <div class="data-id"></div>
+                            <div class="data-text"></div>
+                            <div class="data-pris"></div>
+                            <div class="data-tid"></div>
+                            <h3 class="data-sted"></h3>
 
-
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </template>
+            </section>
         </main>
+
+
         <script>
             document.addEventListener("DOMContentLoaded", getJSON);
-            let posts;
-            let postTemplate = document.querySelector("[data-template]");
-            let postContainer = document.querySelector("[data-container]");
+
+            let jsonfile;
+            let postTemplate = document.querySelector(".data-template");
+            let dest = document.querySelector(".data-container");
+            let filter = "Alle";
+
+
+
+
+
             async function getJSON() {
-                let jsonData = await fetch("http://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events");
-                posts = await jsonData.json();
+                let jsonData = await fetch("http://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events?per_page=100");
+                jsonfile = await jsonData.json();
+                visPosts();
+            }
+            // ------- FILTRERING AF EVENTS ------- //
+            document.querySelectorAll(".lokationstype").forEach(knap => {
+                knap.addEventListener("click", filtering)
+            });
+
+            function filtering() {
+                postContainer.textContent = ""
+                filter = this.getAttribute("data-type")
                 visPosts();
             }
 
             function visPosts() {
-                console.log(posts);
-                posts.forEach(post => {
-                    let klon = postTemplate.cloneNode(true).content;
-                    klon.querySelector("[data-title]").textContent = post.title.rendered;
-                    klon.querySelector("[data-text]").innerHTML = post.content.rendered;
-                    klon.querySelector("[data-pris]").innerHTML = post.acf.pris;
-                    klon.querySelector("[data-tid]").innerHTML = post.acf.tid;
-                    klon.querySelector("[data-sted]").innerHTML = post.acf.sted;
-                    klon.querySelector("img").src = post.acf.billede;
-                    postContainer.appendChild(klon);
+                console.log(jsonfile);
+
+                jsonfile.forEach(post => {
+
+                    if (post.acf.sted == filter || filter == "Alle") {
+
+                        let klon = postTemplate.cloneNode(true).content;
+                        klon.querySelector(".data-title").textContent = post.title.rendered;
+                        klon.querySelector(".data-text").innerHTML = post.content.rendered;
+                        klon.querySelector(".data-pris").innerHTML = post.acf.pris;
+                        klon.querySelector(".data-tid").innerHTML = post.acf.tid;
+                        klon.querySelector(".data-sted").innerHTML = post.acf.sted;
+                        klon.querySelector(".data-dato").innerHTML = post.acf.dato;
+                        klon.querySelector("img").src = post.acf.billede;
+                        klon.querySelector(".postListview").addEventListener("click", () => {
+                            window.location.href = "single.html?id=" + post.id;
+                        });
+                        dest.appendChild(klon);
+                    }
                 })
             }
 
         </script>
 
-
-        <footer>
-
-            <div class="sectionwrapper">
-
-                <div class="column">
-
-                    <p> vær med: </p>
-
+        <footer class="footer">
+            <article id="links">
+                <div>
+                    <h4>Vær med!</h4>
+                    <ul>
+                        <li> <a href="">DIY</a> </li>
+                        <li> <a href="">Ledige stillinger</a> </li>
+                        <li> <a href="">Om Huset</a> </li>
+                    </ul>
                 </div>
-
-                <div class="column">
-
-                    <p> kontakt: </p>
-
+            </article>
+            <article id="nyhedsbrev">
+                <h2>Tilmeld dig vores nyhedsbrev i dag</h2>
+                <h3><span>Ja tak,</span> jeg vil meget gerne modtage<br>e-mail fra Huset-KBH med events,<br>inspiration og gode tilbud</h3>
+                <form>
+                    <input class="textholder" type="email" name="email" value="Skriv din e-mail">
+                    <input class="redbutton" type="submit" name="submit" value="Tilmeld mig"> </form>
+            </article>
+            <article id="links">
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li> <a href="">Presse</a> </li>
+                        <li> <a href="">Huset Struktur</a> </li>
+                        <li> <a href="">Booking</a> </li>
+                        <li> <a href="">Ledige stillinger</a> </li>
+                    </ul>
                 </div>
-
-                <div class="column">
-
-                    <p> åbningstider </p>
-
-                </div>
-
-            </div>
-
+            </article>
+            <section>
+                <h3>Vil du også være først til mølle på de fede events? - </h3>
+                <a href="#links">
+                    <h2>Klik og tilmeld dig i dag</h2>
+                </a>
+            </section>
         </footer>
     </section>
 </body>
