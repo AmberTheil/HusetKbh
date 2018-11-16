@@ -25,15 +25,23 @@
     }
 }
 
+@media screen and (max-width: 800px) {
+    footer article {
+    margin-left: -6vw;
+}
+}
+
 
 /* mq nav */
 @media screen and (max-width: 720px) {
     header .nav {
         font-size: 1.3em;
     }
+
     .nav .lokation-dropdown {
         font-size: 1.1em;
     }
+
     .nav a:not(:first-child) {
         display: none;
     }
@@ -78,6 +86,7 @@
         width: 100%;
         padding-right: 40vw;
     }
+
     header .socialmedia {
         width: 30%;
     }
@@ -777,7 +786,6 @@ footer h2 {
 }
 
 footer {
-    width: 100%;
     margin: 0 auto;
     background-color: #282626;
 }
@@ -791,8 +799,8 @@ footer #links {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
-    padding-left: 4vw;
-    align-content: center;
+    padding-left: 12vw;
+    font-size: 1.1em;
 }
 
 footer ul li {
