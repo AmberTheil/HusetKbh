@@ -5,21 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Forside</title>
 </head>
 
 <body>
-    <header class="header">
+    <header>
 
-        <div class="gif">
-            <img src="img/H.gif" alt=”H icon”>
-        </div>
+        <a href="index.html">
+            <div class="gif">
+                <img src="img/H.gif" alt=”H icon”>
+            </div>
+        </a>
 
         <div class="socialmedia">
+           <div id="ikoner">
             <a href="https://www.facebook.com/Huset.Koebenhavn"><img src="img/Facebook.png" alt="Facebook Icon"></a>
             <a href="https://www.instagram.com/husetkbh/"><img src="img/Instagram.png" alt="Instagram Icon"></a>
             <a href="https://twitter.com/HusetKBH"><img src="img/twitter.png" alt="Twitter Icon"></a>
             <a href="https://www.flickr.com/photos/135006755@N04/"><img src="img/flickr.jpg" alt="FLickr Icon"></a>
+            </div>
 
             <div id="search">
                 <h6>Søg</h6>
@@ -29,7 +34,7 @@
 
         </div>
 
-        <nav>
+        <nav class="nav" id="myNav">
             <a href="index.html">Forside</a>
             <a href="events.html">Events</a>
             <div class="dropdown">
@@ -43,6 +48,9 @@
                 </div>
             </div>
             <a href="kontaktos.html">Kontakt</a>
+            <a href="javascript:void(0);" class="icon" onclick="myNavFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
         </nav>
     </header>
 
@@ -326,6 +334,15 @@
                 bannerStatus = 1;
             }
 
+        }
+
+        function myNavFunction() {
+            var x = document.getElementById("myNav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
         }
     </script>
 </body>

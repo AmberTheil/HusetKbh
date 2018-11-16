@@ -1,3 +1,103 @@
+/* Media queries */
+@media only screen and (max-width: 1235px) {
+    #forside .slideshow {
+        display: none;
+    }
+
+    #forside .content {
+        width: 100%;
+        padding-left: 5vw;
+    }
+}
+
+@media only screen and (max-width: 1210px) {
+    .socialmedia {
+        height: 25%;
+    }
+
+    .socialmedia a {
+        padding: 5px;
+    }
+
+    .socialmedia #search {
+        margin-top: .5vw;
+        padding: 5px;
+    }
+}
+
+
+/* mq nav */
+@media screen and (max-width: 720px) {
+    header .nav {
+        font-size: 1.3em;
+    }
+    .nav .lokation-dropdown {
+        font-size: 1.1em;
+    }
+    .nav a:not(:first-child) {
+        display: none;
+    }
+
+    .nav div:not(:first-child) {
+        display: none;
+    }
+
+    .nav a.icon {
+
+        display: block;
+    }
+
+    .nav.responsive {
+        position: relative;
+    }
+
+    .nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .nav.responsive div {
+        float: none;
+        display: block;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .socialmedia #search {
+        display: none;
+    }
+
+    header .gif {
+        width: 100%;
+        padding-right: 40vw;
+    }
+    header .socialmedia {
+        width: 30%;
+    }
+}
+
+
+
+@media screen and (min-width:580px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .socialmedia a {
+        padding: 2px;
+    }
+
+}
+
 /* Generelt */
 
 * {
@@ -35,14 +135,16 @@ header {
     width: 30%;
     margin: -3vw;
     padding-right: 3vw;
-    margin-left: 2vw;
+    margin-left: -4vw;
 }
 
 .socialmedia {
     float: right;
     width: 10%;
     margin-top: -5vw;
+    margin-right: -5vw;
 }
+
 
 #search {
     flex-grow: 1;
@@ -50,7 +152,7 @@ header {
     background-color: #F9DDE9;
     margin: 1vw;
     margin-left: -3vw;
-    margin-top: 2.5vw;
+    margin-top: 3vw;
 }
 
 header img {
@@ -60,6 +162,10 @@ header img {
 nav {
     text-align: center;
     word-spacing: 3.5vw;
+}
+
+.nav .icon {
+    display: none;
 }
 
 a {
@@ -148,7 +254,9 @@ a {
 }
 
 #forside .content {
-    padding: 6vw;
+    padding-bottom: 6vw;
+    padding-top: 6vw;
+    padding-right: 6vw;
     color: black;
 }
 
@@ -163,13 +271,6 @@ a {
     width: 25%;
 }
 
-
-
-@media screen and (min-width:580px) {
-    .container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
 
 #forside img {
     width: 100%;
@@ -198,7 +299,6 @@ a {
     margin-top: 2vw;
     margin-bottom: -2vw;
     border: 5px solid black;
-
 }
 
 
@@ -692,6 +792,7 @@ footer #links {
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
     padding-left: 4vw;
+    align-content: center;
 }
 
 footer ul li {
