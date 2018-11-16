@@ -108,12 +108,8 @@
 
             let jsonfile;
             let postTemplate = document.querySelector(".data-template");
-            let dest = document.querySelector(".data-container");
+            let postContainer = document.querySelector(".data-container");
             let filter = "Alle";
-
-
-
-
 
             async function getJSON() {
                 let jsonData = await fetch("http://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events?per_page=100");
@@ -149,7 +145,7 @@
                         klon.querySelector(".postListview").addEventListener("click", () => {
                             window.location.href = "single.html?id=" + post.id;
                         });
-                        dest.appendChild(klon);
+                        postContainer.appendChild(klon);
                     }
                 })
             }
