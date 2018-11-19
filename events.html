@@ -112,7 +112,7 @@
             let filter = "Alle";
 
             async function getJSON() {
-                let jsonData = await fetch("http://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events?per_page=100");
+                let jsonData = await fetch("https://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events?per_page=100");
                 jsonfile = await jsonData.json();
                 visPosts();
             }
@@ -149,7 +149,6 @@
                     }
                 })
             }
-
         </script>
 
         <footer class="footer">
@@ -190,3 +189,5 @@
         </footer>
     </section>
 </body>
+
+</html>
