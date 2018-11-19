@@ -11,29 +11,21 @@
 }
 
 @media only screen and (max-width: 1210px) {
-    .socialmedia {
-        height: 25%;
-    }
-
-    .socialmedia a {
-        padding: 5px;
-    }
-
     .socialmedia #search {
-        margin-top: .5vw;
+        margin-top: 2vw;
         padding: 5px;
     }
 }
 
 @media screen and (max-width: 800px) {
     footer article {
-    margin-left: -6vw;
-}
+        margin-left: -6vw;
+    }
 }
 
 
 /* mq nav */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1000px) {
     header .nav {
         font-size: 1.3em;
     }
@@ -42,7 +34,7 @@
         font-size: 1.1em;
     }
 
-    .nav a:not(:first-child) {
+    .nav a:not(:only-child) {
         display: none;
     }
 
@@ -51,7 +43,6 @@
     }
 
     .nav a.icon {
-
         display: block;
     }
 
@@ -77,22 +68,17 @@
         text-align: left;
         overflow: hidden;
     }
+}
+
+@media screen and (max-width: 700px) {
+    .socialmedia img {
+
+    }
 
     .socialmedia #search {
         display: none;
     }
-
-    header .gif {
-        width: 100%;
-        padding-right: 40vw;
-    }
-
-    header .socialmedia {
-        width: 30%;
-    }
 }
-
-
 
 @media screen and (min-width:580px) {
     .container {
@@ -132,6 +118,7 @@ header img {
 
 
 header {
+    padding: 1vw;
     width: 100%;
     background-image: url(husetm%C3%B8rk.png);
     background-size: cover;
@@ -140,37 +127,42 @@ header {
 }
 
 .gif {
-    grid-column: 1;
-    border: solid
+    text-align: center;
+    padding-top: 1vw;
+    grid-column: 1/2;
 }
 
 .gif img {
-    width: 40%;
-}
-
-.socialmedia {
-    float: right;
-    width: 100%;
-    grid-column: 5
-}
-
-.socialmedia img {
-    width: 20%;
-}
-#search {
-    padding: 15px 10%;
-    background-color: #F9DDE9;
-    margin-top: 3vw;
+    width: 30%;
 }
 
 nav {
     text-align: center;
     word-spacing: 3.5vw;
-    grid-column: 2/4;
+    grid-column: 2/5;
+    grid-row: 1;
+    padding-top: 8vw;
+    padding-right: 2vw;
 }
 
 .nav .icon {
     display: none;
+}
+
+.socialmedia {
+    width: 100%;
+    grid-column: 5/6;
+}
+
+.socialmedia img {
+    width: 10%;
+    float: right;
+}
+
+.socialmedia #search {
+    padding: 15px 10%;
+    background-color: #F9DDE9;
+    margin-top: 9vw;
 }
 
 a {
