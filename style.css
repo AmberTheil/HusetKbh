@@ -17,15 +17,23 @@
     }
 }
 
-@media screen and (max-width: 800px) {
-    footer article {
-        margin-left: -6vw;
-    }
-}
+@media screen and (max-width: 800px) {}
 
 
 /* mq nav */
 @media screen and (max-width: 1000px) {
+    header {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    nav {
+        grid-column: 2/3;
+    }
+
+    .socialmedia {
+        grid-column: 3/4;
+    }
+
     header .nav {
         font-size: 1.3em;
     }
@@ -71,9 +79,7 @@
 }
 
 @media screen and (max-width: 700px) {
-    .socialmedia img {
-
-    }
+    .socialmedia img {}
 
     .socialmedia #search {
         display: none;
@@ -91,6 +97,26 @@
         padding: 2px;
     }
 
+    footer {
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    footer .vær {
+        grid-column: 2;
+        grid-row: 1/2;
+    }
+
+    footer .kontakt {
+        grid-column: 2;
+        grid-row: 2/3;
+        margin-top: -4em;
+    }
+
+    footer #nyhedsbrev {
+        grid-column: 2;
+        grid-row: 3/4;
+        margin-top: -6em;
+    }
 }
 
 /* Generelt */
@@ -781,15 +807,18 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-footer article {
-    padding: 4vw;
+footer .vær {
+    grid-column: 1/2;
+}
+
+footer .kontakt {
+    grid-column: 3/4;
 }
 
 footer #links {
     color: #c6c6c6;
-    grid-gap: 10px;
-    padding-left: 12vw;
     font-size: 1.1em;
+    text-align: center;
 }
 
 footer ul li {
@@ -815,7 +844,8 @@ footer #links a:hover {
 footer #nyhedsbrev {
     background-color: #F9DDE9;
     text-align: center;
-    padding: 2vw
+    padding: 2vw;
+    grid-column: 2/3;
 }
 
 footer #nyhedsbrev h3 {
@@ -855,8 +885,6 @@ footer article {
 
 footer #links {
     color: #c6c6c6;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
 footer ul li {
@@ -881,7 +909,7 @@ footer #links a:hover {
 footer #nyhedsbrev {
     background-color: #F9DDE9;
     text-align: center;
-    padding: 2em;
+    padding: 1em;
 }
 
 footer #nyhedsbrev h3 {
