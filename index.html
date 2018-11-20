@@ -48,24 +48,58 @@
             </div>
         </div>
 
-        <nav class="nav" id="myNav">
-            <a href="index.html">Forside</a>
-            <a href="events.html">Events</a>
-            <div class="dropdown">
-                <button class="lokation-dropdown"><a href="lokationer.html">Venues</a></button>
+        <nav class="navbar">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fa fa-bars"></i>
+        </span>
+            <ul class="main-nav" id="js-menu">
+                <li>
+                    <a href="index.html" class="nav-links">Forside</a>
+                </li>
+                <li>
+                    <a href="events.html" class="nav-links">Events</a>
+                </li>
+                  <div class="dropdown">
+                <button class="lokation-dropdown"><li><a href="lokationer.html">Venues</a></li></button>
                 <div class="dropdown-content">
-                    <a href="bastard.html">Bastard Cafe</a>
-                    <a href="husetsbiograf.html">Husets Biograf</a>
-                    <a href="musikcafeen.html">Musikcaféen</a>
-                    <a href="salonk.html">Salon K</a>
-                    <a href="stardust.html">Stardust</a>
+                    <li><a href="bastard.html" class="nav-links">Bastard Cafe</a></li>
+                    <li><a href="husetsbiograf.html" class="nav-links">Husets Biograf</a></li>
+                    <li><a href="musikcafeen.html" class="nav-links">Musikcaféen</a></li>
+                    <li><a href="salonk.html" class="nav-links">Salon K</a></li>
+                    <li><a href="stardust.html" class="nav-links">Stardust</a></li>
                 </div>
             </div>
-            <a href="kontaktos.html">Kontakt</a>
-            <a href="javascript:void(0);" class="icon" onclick="myNavFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+                <li>
+                    <a href="kontaktos.html" class="nav-links">Kontakt</a>
+                </li>
+            </ul>
         </nav>
+
+
+        <!--
+        <nav class="nav" id="myNav">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+            <ul class="main-nav" id="js-menu">
+                <li>
+            <a href="index.html">Forside</a>
+                    </li>
+            <li> <a href="events.html">Events</a></li>
+         <div class="dropdown">
+                <button class="lokation-dropdown"><li><a href="lokationer.html">Venues</a></li></button>
+                <div class="dropdown-content">
+                    <li><a href="bastard.html">Bastard Cafe</a></li>
+                    <li><a href="husetsbiograf.html">Husets Biograf</a></li>
+                    <li><a href="musikcafeen.html">Musikcaféen</a></li>
+                    <li><a href="salonk.html">Salon K</a></li>
+                    <li><a href="stardust.html">Stardust</a></li>
+                </div>
+            </div>
+            <li><a href="kontaktos.html">Kontakt</a></li>
+                </ul>
+        </nav>
+-->
     </header>
 
     <section id="forside">
@@ -350,14 +384,12 @@
 
         }
 
-        function myNavFunction() {
-            var x = document.getElementById("myNav");
-            if (x.className === "nav") {
-                x.className += " responsive";
-            } else {
-                x.className = "nav";
-            }
-        }
+        let mainNav = document.getElementById('js-menu');
+        let navBarToggle = document.getElementById('js-navbar-toggle');
+
+        navBarToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
     </script>
 </body>
 
