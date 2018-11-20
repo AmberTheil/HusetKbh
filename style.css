@@ -1,4 +1,3 @@
-
 /* Generelt */
 
 * {
@@ -527,38 +526,17 @@ label {
 
 /* kontakt os side */
 
+.husetadmin img {
+    width: 100%;
+}
+
 .husetadmin {
-    background-color: gray;
+    margin: 5vw;
+    padding: 2vw;
+    background-color: grey;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 1vw;
-}
-
-#ledelse1 {
-    background-image: url(img/admin1.jpg);
-}
-
-#ledelse2 {
-    background-image: url(img/admin2.jpg);
-}
-
-#ledelse3 {
-    background-image: url(img/admin3.jpg);
-}
-
-#ledelse4 {
-    background-image: url(img/admin4.jpg);
-}
-
-.txt1 {
-    width: 400px;
-    border: 3px solid red;
-}
-
-
-.profilpic {
-    height: 300px;
-    width: 300px;
+    grid-gap: 2vw;
 }
 
 .sectionwrapper {
@@ -573,7 +551,7 @@ label {
     grid-template-areas: "mainside aside";
 }
 
-.kontakt_section {
+.kontakt_site {
     border: 5px solid;
     height: 350px;
     width: 600px;
@@ -912,8 +890,6 @@ footer section h2 {
     }
 
 }
-
-
 
 @media only screen and (max-width: 700px) {
 
