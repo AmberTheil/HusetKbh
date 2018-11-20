@@ -74,10 +74,9 @@
                 <div class="card middle">
                     <div class="front">
                         <div class="slidetop">
-                    <h4 class="pris"> Pris: </h4>
-                    <h3 class="data-pris"> </h3>
-                    <h4 class="kr">,- </h4>
-                    <h3 class="data-tid"></h3>
+                            <h3 class="data-tid"></h3>
+                            <br>
+                            <h3 class="data-pris"> </h3>
                             <h3 class="data-dato"></h3>
                 </div>
                         <img class="data-billede" src="" alt="">
@@ -137,8 +136,8 @@
                         let klon = postTemplate.cloneNode(true).content;
                         klon.querySelector(".data-title").textContent = post.title.rendered;
                         klon.querySelector(".data-text").innerHTML = post.content.rendered;
-                        klon.querySelector(".data-pris").innerHTML = post.acf.pris;
-                        klon.querySelector(".data-tid").innerHTML = post.acf.tid;
+                        klon.querySelector(".data-pris").textContent = "Pris: " + post.acf.pris + ",-";
+                        klon.querySelector(".data-tid").textContent = "Kl. " + post.acf.tid;
                         klon.querySelector(".data-sted").innerHTML = post.acf.sted;
                         klon.querySelector(".data-dato").innerHTML = post.acf.dato;
                         klon.querySelector("img").src = post.acf.billede;
@@ -149,7 +148,9 @@
                     }
                 })
             }
+
         </script>
+
 
         <footer class="footer">
             <article id="links">
