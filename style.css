@@ -512,7 +512,6 @@ label {
     font-weight: 100;
     border-bottom: 6px solid #333333;
     padding-bottom: 2vw;
-
 }
 
 #single .mainside h4 {
@@ -682,39 +681,31 @@ label {
 /* kontakt os side */
 
 .husetadmin {
-    height: 500px;
     background-color: gray;
-    padding: 50px;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 1vw;
 }
 
 #ledelse1 {
     background-image: url(img/admin1.jpg);
-
-
 }
 
 #ledelse2 {
     background-image: url(img/admin2.jpg);
-
 }
 
 #ledelse3 {
     background-image: url(img/admin3.jpg);
-
 }
 
 #ledelse4 {
     background-image: url(img/admin4.jpg);
-
 }
 
 .txt1 {
     width: 400px;
     border: 3px solid red;
-
 }
 
 
@@ -724,7 +715,7 @@ label {
 }
 
 .sectionwrapper {
-    width: 100vw;
+    width: 100%;
     display: flex
 }
 
