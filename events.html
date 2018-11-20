@@ -55,17 +55,74 @@
 
         </div>
 
-        <div class="filter-lokation">
-            <label for="toggle">Lokation</label>
-            <input type="checkbox" id="toggle" />
+        <main>
+            <div id="content">
+                <section id="slidesection" class="filter">
 
-            <div class="dropdownbtn">
-                <button class="lokationstype" data-type="Alle">Alle</button>
-                <button class="lokationstype" data-type="Bastard Café">Bastard Café</button>
-                <button class="lokationstype" data-type="Husets biograf">Husets Biograf</button>
-                <button class="lokationstype" data-type="Xenon">Xenon</button>
+                    <div class="selection">
+                        <select class="yellowbutton" name="forma">
+                            <option value="#">Vælg Venue</option>
+                <option class="lokationstype" data-type="Alle">Alle</option>
+                <option class="lokationstype" data-type="Bastard Café">Bastard Café</option>
+                <option class="lokationstype" data-type="Husets biograf">Husets Biograf</option>
+                <option class="lokationstype" data-type="Xenon">Xenon</option>
+
+                            </select>
+
+                    </div>
+                    <div class="selection">
+                        <select class="yellowbutton" name="forma" onchange="location = this.value;">
+                        <option value="#">Vælg Genre</option>
+                        <option value="#">Film</option>
+                        <option value="#">Musik</option>
+                        <option value="#">Performance Art</option>
+                        <option value="#">Spoken Word</option>
+                    </select>
+                    </div>
+                    <div class="selection">
+                        <select class="yellowbutton" name="forma" onchange="location = this.value;">
+                        <option value="#">Vælg dato</option>
+                        <option value="#">November</option>
+                        <option value="#">December</option>
+                        <option value="#">Januar</option>
+                        <option value="#">Februar</option>
+                        <option value="#">Marts</option>
+                        <option value="#">April</option>
+                        <option value="#">Maj</option>
+                        <option value="#">August</option>
+                        <option value="#">September</option>
+                        <option value="#">Oktober</option>
+                    </select>
+                    </div>
+                    <div class="selection">
+                        <select class="yellowbutton" name="forma" onchange="location = this.value;">
+                        <option value="#">Vælg Pris</option>
+                        <option value="#">0 - 49kr.</option>
+                        <option value="#">50 - 99kr.</option>
+                        <option value="#">100 - 149kr.</option>
+                        <option value="#">150 - 199kr.</option>
+                        <option value="#">200 - 249kr.</option>
+                        <option value="#">250 - 299kr.</option>
+                    </select>
+                    </div>
+                </section>
+                <section id="newest"> </section>
             </div>
-        </div>
+        </main>
+
+        <!--
+<div class="filter-lokation">
+    <label for="toggle">Lokation</label>
+    <input type="checkbox" id="toggle" />
+
+    <div class="dropdownbtn">
+        <button class="lokationstype" data-type="Alle">Alle</button>
+        <button class="lokationstype" data-type="Bastard Café">Bastard Café</button>
+        <button class="lokationstype" data-type="Husets biograf">Husets Biograf</button>
+        <button class="lokationstype" data-type="Xenon">Xenon</button>
+    </div>
+</div>
+-->
         <main>
             <section class="data-container">
                 <template class="data-template">
@@ -148,7 +205,6 @@
                     }
                 })
             }
-
         </script>
 
 

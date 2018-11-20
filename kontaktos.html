@@ -55,43 +55,57 @@
         </div>
 
 
-        <div class="kontakt_site">
-            <h3>Kontakt</h3>
-            <p>Kontakt HUSET-KBH. Du kan finde os på Rådhusstræde 13. 1466 København K. Du kan også ringe til os på Tlf: 21 51 21 51 eller kigge forbi vores hjemmeside på: info@huset-kbh.dk. Du kan også komme forbi os! Husets reception har åbent for henvendelser i hverdage ml. 11.00-15. Vi ses i HUSET!
+        <div class="kontakt_wrapper">
+            <div class="kontakt_site">
+                <h3>Kontakt</h3>
+                <p>Kontakt HUSET-KBH. Du kan finde os på Rådhusstræde 13. 1466 København K. Du kan også ringe til os på Tlf: 21 51 21 51 eller kigge forbi vores hjemmeside på: info@huset-kbh.dk. Du kan også komme forbi os! Husets reception har åbent for henvendelser i hverdage ml. 11.00-15. Vi ses i HUSET!
 
-            </p>
-            <br>
-            <br>
+                </p>
+                <br>
+                <br>
 
-            <h3>Huset-KBH</h3> <br>
-            <p>Rådhusstræde 13</p><br>
+                <h3>Huset-KBH</h3> <br>
+                <p>Rådhusstræde 13</p><br>
 
-            <p>1466 København K</p><br>
+                <p>1466 København K</p><br>
 
-            <p>Tlf: 21 51 21 51</p><br>
+                <p>Tlf: 21 51 21 51</p><br>
 
-            <p>info@huset-kbh.dk</p><br>
+                <p>info@huset-kbh.dk</p><br>
 
 
 
-            <p>Husets reception har åbent for henvendelser i hverdage ml. 11.00-15.00.</p>
-        </div>
-        <div class="kontaktformular">
-            <div class="blanket">
-                First name: <input type="text" name="firstname" value=""> Last name: <input type="text" name="lastname" value=""> Telefon nr: <input type="text" name="Telefon nr" value="">
-                <div id="knap">
-                    <button id="ansog"><h3>Ansøg</h3> </button>
-                </div>
+                <p>Husets reception har åbent for henvendelser i hverdage ml. 11.00-15.00.</p>
             </div>
+            <div class="blanket">
+                <div class="container">
+                </div>
+                <form action="/action_page.php">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
+        </div>
+
+
 
         <div class="maps_box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8998.902439035684!2d12.5747148!3d55.6763715!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdb78617809263eb5!2sHuset-KBH!5e0!3m2!1sen!2sdk!4v1542735012133" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4499.411557678864!2d12.574768444175808!3d55.6767163275641!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdb78617809263eb5!2sHuset-KBH!5e0!3m2!1sen!2sdk!4v1542739330586" width="700" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
 
 
     </section>
+
 
 </body>
 </html>
