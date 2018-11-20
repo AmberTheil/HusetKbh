@@ -1,4 +1,5 @@
 /* Media queries */
+
 @media only screen and (max-width: 1235px) {
     #forside .slideshow {
         display: none;
@@ -19,6 +20,7 @@
 
 
 /* mq nav */
+
 @media only screen and (max-width: 1000px) {
     nav {
         grid-column: 3/4;
@@ -477,9 +479,10 @@ label {
 }
 
 #single img {
-    width: 100%;
-    margin-left: -1vw;
-    padding: 1vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
 }
 
 #single #content {
@@ -491,7 +494,13 @@ label {
 
 .mainside {
     grid-area: mainside;
-    padding: 6vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vw;
+    margin-bottom: 5vw;
+    background-color: white;
+    opacity: .8;
+    padding-top: 4vw;
 }
 
 .aside {
@@ -515,12 +524,12 @@ label {
 }
 
 #single .aside {
-    margin-right: 0vw;
-    padding: 8vw;
+    padding: 4vw;
     background-color: #F9DDE9;
     position: relative;
     display: block;
     margin-bottom: 5vw;
+    margin-top: 3vw;
 }
 
 #single .aside h4 {
@@ -574,7 +583,7 @@ label {
     box-shadow: 0 0 13px rgba(255, 196, 0, 0.6);
     font-size: .8em;
     margin-top: 2vw;
-    margin-left: 3vw;
+    margin-left: 5vw;
 }
 
 
