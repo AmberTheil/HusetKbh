@@ -165,11 +165,14 @@ a {
 
 #events .data-container article img {
     width: 100%;
-    bottom: 0;
+    position:absolute;
+    bottom:0;
+    border: 3px solid #333333;
+
 }
 
+
 #events .data-container {
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 4vw;
@@ -210,28 +213,14 @@ a {
     grid-column: 3/4;
 }
 
-
-
 #events .slidetop {
-    background-color: #282626;
-    border: 2px solid #333333;
     padding: .5vw;
     color: white;
 
 }
 
-.data-container .postListview {
+#events .front {
     background-color: #282626;
-}
-
-#events .slidebottom {
-    border: 2px solid #333333;
-    /*    padding-bottom: 1vw;*/
-
-}
-
-#events .slidebottom .data-title {
-    color: white;
 }
 
 #events .data-text {
@@ -259,7 +248,6 @@ a {
     cursor: pointer;
     width: 29.2vw;
     height: 43vh;
-
 }
 
 .front,
@@ -1039,12 +1027,27 @@ footer section h2 {
 }
 
 @media screen and (max-width:650px) {
+    #events .data-container article img {
+        object-fit: cover;
+        height: 30vw;
+    }
+
+    .card {
+        width: 58.4vw;
+        height: 45vh;
+    }
+
+    #events .data-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: .6em;
+    }
+
     #events .slidetop {
         grid-template-rows: 1fr 1fr 1fr 1fr;
     }
 
     .data-container .postListview {
-        grid-column: 2;
+        grid-column: 2/3;
     }
 
     #events .slidetop .data-title {
@@ -1110,3 +1113,9 @@ footer section h2 {
         font-size: 15px;
     }
 }
+
+@media screen and (max-width:450px) {
+    .card {
+        width: 58.4vw;
+        height: 35vh;
+    }
