@@ -5,26 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Single</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="fav.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav.ico/android-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav.ico/android-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="fav.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav.ico/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav.ico/favicon-16x16.png">
+    <link rel="manifest" href="fav.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <header class="header">
-        <nav>
-            <a href="index.html">Forside</a>
-            <a href="events.html">Events</a>
-            <div class="dropdown">
-                <button class="lokation-dropdown">Locations</button>
-                <div class="dropdown-content">
-                    <a href="bastard.html">Bastard Cafe</a>
-                    <a href="husetsbiograf.html">Husets Biograf</a>
-                    <a href="musikcafeen.html">Musikcaféen</a>
-                    <a href="salonk.html">Salon K</a>
-                    <a href="stardust.html">Stardust</a>
-                </div>
+    <header>
+
+        <div class="gif">
+            <a href="index.html">
+                <img src="img/H.gif" alt=”H icon”>
+            </a>
+        </div>
+
+        <div class="socialmedia">
+            <div id="ikoner">
+                <a href="https://www.facebook.com/Huset.Koebenhavn"><img src="img/Facebook.png" alt="Facebook Icon"></a>
+                <a href="https://www.instagram.com/husetkbh/"><img src="img/Instagram.png" alt="Instagram Icon"></a>
+                <a href="https://twitter.com/HusetKBH"><img src="img/twitter.png" alt="Twitter Icon"></a>
+                <a href="https://www.flickr.com/photos/135006755@N04/"><img src="img/flickr.jpg" alt="FLickr Icon"></a>
             </div>
-            <a href="kontaktos.html">Kontakt</a>
+
+            <div id="search">
+                <h6>Søg</h6>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fa fa-bars"></i>
+        </span>
+            <ul class="main-nav" id="js-menu">
+                <li>
+                    <a href="index.html" class="nav-links">Forside</a>
+                </li>
+                <li>
+                    <a href="events.html" class="nav-links">Events</a>
+                </li>
+                <div class="dropdown">
+                    <button class="lokation-dropdown"><li><a href="lokationer.html">Venues</a></li></button>
+                    <div class="dropdown-content">
+                        <li><a href="bastard.html" class="nav-links">Bastard Cafe</a></li>
+                        <li><a href="husetsbiograf.html" class="nav-links">Husets Biograf</a></li>
+                        <li><a href="index.html" class="nav-links">Musikcaféen</a></li>
+                        <li><a href="index.html" class="nav-links">Salon K</a></li>
+                        <li><a href="index.html" class="nav-links">Stardust</a></li>
+                    </div>
+                </div>
+                <li>
+                    <a href="kontaktos.html" class="nav-links">Kontakt</a>
+                </li>
+            </ul>
         </nav>
+
     </header>
 
 
@@ -32,99 +82,110 @@
 
 
 
-        <section id="single">
+    <section id="single">
 
-            <button onclick="goBack()">Go Back</button>
+        <button onclick="goBack()">Go Back</button>
 
-            <main>
-                <section class="data-container">
+        <main>
+            <section class="data-container">
 
-                    <div id="content">
-                       <img class="data-billede" src="" alt="">
-                        <div class="mainside">
-                            <h2 class="data-title"></h2>
-                            <!--                        <h4 class="data-text"></h4>-->
-                            <h4 class="data-LangBeskrivelse"></h4>
-                        </div>
-                        <div class="aside">
-                            <h4 class="data-pris">
-                            </h4>
-                            <h4 class="kr">,-</h4>
-                            <br>
-                            <h4 class="doortime">Dørene åbner kl. </h4>
-                            <h4 class="data-tid"></h4>
-                            <h3 class="data-sted"></h3>
-                            <button class="yellowbutton">Køb billet</button>
-                        </div>
+                <div id="content">
+                    <img class="data-billede" src="" alt="">
+                    <div class="mainside">
+                        <h2 class="data-title"></h2>
+                        <!--                        <h4 class="data-text"></h4>-->
+                        <h4 class="data-LangBeskrivelse"></h4>
                     </div>
-                </section>
+                    <div class="aside">
+                        <h4 class="data-pris">
+                        </h4>
+                        <h4 class="kr">,-</h4>
+                        <br>
+                        <h4 class="doortime">Dørene åbner kl. </h4>
+                        <h4 class="data-tid"></h4>
+                        <h3 class="data-sted"></h3>
+                        <button class="yellowbutton">Køb billet</button>
+                    </div>
+                </div>
+            </section>
 
-            </main>
-
-
-
-            <script>
-                let urlParams = new URLSearchParams(window.location.search);
-                let id = urlParams.get("id");
-
-                let posts;
-                document.addEventListener("DOMContentLoaded", getJSON);
-                async function getJSON() {
-                    let jsonData = await fetch("https://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events?per_page=100");
-                    posts = await jsonData.json();
-                    console.log(posts);
-                    visPosts();
+        </main>
 
 
-                }
 
-                function visPosts() {
-                    let dest = document.querySelector(".data-container");
-                    console.log("id");
-                    posts.forEach(post => {
-                        if (post.id == id) {
-                            dest.querySelector(".data-title").textContent = post.title.rendered;
-                            //                        dest.querySelector(".data-text").innerHTML = post.content.rendered;
-                            dest.querySelector(".data-pris").innerHTML = post.acf.pris;
-                            dest.querySelector(".data-tid").innerHTML = post.acf.tid;
-                            dest.querySelector(".data-sted").innerHTML = post.acf.sted;
-                            dest.querySelector(".data-LangBeskrivelse").innerHTML = post.acf.LangBeskrivelse;
-                            dest.querySelector(".data-billede").src = post.acf.billede;
-                        }
-                    });
-                }
+        <script>
+            let urlParams = new URLSearchParams(window.location.search);
+            let id = urlParams.get("id");
+
+            let posts;
+            document.addEventListener("DOMContentLoaded", getJSON);
+            async function getJSON() {
+                let jsonData = await fetch("https://www.rigmordesign.com/kea/huset/wordpress/wp-json/wp/v2/events?per_page=100");
+                posts = await jsonData.json();
+                console.log(posts);
+                visPosts();
+
+
+            }
+
+            function visPosts() {
+                let dest = document.querySelector(".data-container");
+                console.log("id");
+                posts.forEach(post => {
+                    if (post.id == id) {
+                        dest.querySelector(".data-title").textContent = post.title.rendered;
+                        //                        dest.querySelector(".data-text").innerHTML = post.content.rendered;
+                        dest.querySelector(".data-pris").innerHTML = post.acf.pris;
+                        dest.querySelector(".data-tid").innerHTML = post.acf.tid;
+                        dest.querySelector(".data-sted").innerHTML = post.acf.sted;
+                        dest.querySelector(".data-LangBeskrivelse").innerHTML = post.acf.LangBeskrivelse;
+                        dest.querySelector(".data-billede").src = post.acf.billede;
+                    }
+                });
+            }
 
 
             function goBack() {
                 window.history.back();
             }
 
-            </script>
-            <footer>
-
-                <div class="sectionwrapper">
-
-                    <div class="column">
-
-                        <p> vær med: </p>
-
-                    </div>
-
-                    <div class="column">
-
-                        <p> kontakt: </p>
-
-                    </div>
-
-                    <div class="column">
-
-                        <p> åbningstider </p>
-
-                    </div>
-
+        </script>
+        <footer class="footer">
+            <article id="links" class="vær">
+                <div>
+                    <h4>Vær med!</h4>
+                    <ul>
+                        <li> <a href="">Bliv Frivillig</a> </li>
+                        <li> <a href="">Ledige stillinger</a> </li>
+                        <li> <a href="">Åbningstider</a> </li>
+                    </ul>
                 </div>
-
-            </footer>
-        </section>
+            </article>
+            <article id="nyhedsbrev">
+                <h2>Tilmeld dig vores nyhedsbrev i dag</h2>
+                <h3><span>Ja tak,</span> jeg vil meget gerne modtage<br>e-mail fra Huset-KBH med events,<br>inspiration og gode tilbud</h3>
+                <form>
+                    <input class="textholder" type="email" name="email" value="Skriv din e-mail">
+                    <input class="redbutton" type="submit" name="submit" value="Tilmeld mig"> </form>
+            </article>
+            <article id="links" class="kontakt">
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li> <a href="">Nyhedsbrev</a> </li>
+                        <li> <a href="">Generelle spørgsmål</a> </li>
+                        <li> <a href="">Kontakt Os</a> </li>
+                    </ul>
+                </div>
+            </article>
+            <section>
+                <h3>Vil du også være først til mølle på de fede events? - </h3>
+                <a href="#links">
+                    <h2>Klik og tilmeld dig i dag</h2>
+                </a>
+            </section>
+        </footer>
+    </section>
 </body>
+
 </html>

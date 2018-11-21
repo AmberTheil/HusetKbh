@@ -341,6 +341,34 @@ h2 {
 
 /* Single page */
 
+#single button {
+    border: none;
+    background: #F9DDE9;
+    color: black;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+
+#single button:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    transition: all 2s ease;
+}
+
+#single button:hover:before {
+    width: 100%;
+}
+
 #single * {
     margin-left: 2vw;
     margin-right: 2vw;
@@ -361,9 +389,7 @@ h2 {
 #single #content {
     display: grid;
     grid-template-columns: 1.4fr 0.6fr;
-    grid-template-areas:
-        'data-billede aside'
-        'mainside aside';
+    grid-template-areas: 'data-billede aside' 'mainside aside';
 }
 
 .mainside {
@@ -552,8 +578,6 @@ h2 {
 
 
 /* kontakt os side */
-
-
 
 .husetadmin img {
     width: 100%;
@@ -1002,9 +1026,7 @@ footer section h2 {
 
 @media only screen and (max-width: 700px) {
     #single #content {
-        grid-template-areas:
-            'mainside mainside'
-            'aside aside';
+        grid-template-areas: 'mainside mainside' 'aside aside';
     }
 
     #single img {
@@ -1020,15 +1042,15 @@ footer section h2 {
     }
 
     #single .aside .doortime {
-       font-size: 3vw;
+        font-size: 3vw;
     }
 
     #single .aside .data-tid {
-       font-size: 3vw;
+        font-size: 3vw;
     }
 
     #single .aside .data-pris {
-       font-size: 5vw;
+        font-size: 5vw;
     }
 
     .socialmedia {
