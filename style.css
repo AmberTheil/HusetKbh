@@ -155,7 +155,7 @@ a {
 }
 
 #events .billede img {
-    width: 90%;
+    width: 90.5%;
     margin: 5.5vw;
     margin-top: 2vw;
     margin-bottom: -2vw;
@@ -165,8 +165,8 @@ a {
 
 #events .data-container article img {
     width: 100%;
-    position:absolute;
-    bottom:0;
+    position: absolute;
+    bottom: 0;
     border: 3px solid #333333;
 
 }
@@ -349,27 +349,28 @@ h2 {
 #single {
     background-color: dimgrey;
     background-image: linear-gradient(180deg, black, white);
+
 }
 
 #single img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 92%;
+    margin-top: 3vw;
+    width: 92.5%;
 }
 
 #single #content {
     display: grid;
     grid-template-columns: 1.4fr 0.6fr;
-    grid-template-rows: ;
-    grid-template-areas: "mainside aside";
+    grid-template-areas:
+        'data-billede aside'
+        'mainside aside';
 }
 
 .mainside {
     grid-area: mainside;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3vw;
+    margin-top: 4vw;
     margin-bottom: 5vw;
     background-color: white;
     opacity: .8;
@@ -455,7 +456,6 @@ h2 {
     box-shadow: 0 0 13px rgba(255, 196, 0, 0.6);
     font-size: .8em;
     margin-top: 2vw;
-    margin-left: 5vw;
 }
 
 
@@ -1001,6 +1001,36 @@ footer section h2 {
 }
 
 @media only screen and (max-width: 700px) {
+    #single #content {
+        grid-template-areas:
+            'mainside mainside'
+            'aside aside';
+    }
+
+    #single img {
+        display: none;
+    }
+
+    #single .mainside h2 {
+        font-size: 1.5em;
+    }
+
+    #single .mainside h4 {
+        font-size: 1em;
+    }
+
+    #single .aside .doortime {
+       font-size: 3vw;
+    }
+
+    #single .aside .data-tid {
+       font-size: 3vw;
+    }
+
+    #single .aside .data-pris {
+       font-size: 5vw;
+    }
+
     .socialmedia {
         padding-left: 0vw;
     }
